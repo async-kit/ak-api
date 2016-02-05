@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "glob": "^6.0.4",
-    "highland": "^2.6.0"
+    "highland": "^2.6.0",
+    "restify": "^4.0.3"
   }
 }
