@@ -1,0 +1,31 @@
+{
+  "name": "ak-api",
+  "version": "0.1.0",
+  "description": "async-kit API server toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/async-kit/ak-api.git"
+  },
+  "keywords": [
+    "REST",
+    "api",
+    "http",
+    "restify",
+    "oauth2",
+    "acl"
+  ],
+  "author": "Jonathan M. Altman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/async-kit/ak-api/issues"
+  },
+  "homepage": "https://github.com/async-kit/ak-api#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
