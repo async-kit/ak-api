@@ -1,7 +1,8 @@
 {
   "env"     : {
     "node" : true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "globals" : {
   },
@@ -9,6 +10,9 @@
     "semi" : [2, "always"],
     "no-undef": 2,
     "quotes": [2, "single"],
-    "eqeqeq": [2, "allow-null"]
+    "eqeqeq": [2, "allow-null"],
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "no-trailing-spaces": 2,
+    "comma-dangle": [2, "always-multiline"]
   }
 }
