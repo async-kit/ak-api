@@ -1,23 +1,14 @@
 {
-  "parser"  : "babel-eslint",
-  "extends" : [
-    "standard",
-    "standard-react"
-  ],
   "env"     : {
-    "browser" : true
+    "node" : true,
+    "es6": true
   },
   "globals" : {
-    "__DEV__"      : false,
-    "__PROD__"     : false,
-    "__DEBUG__"    : false,
-    "__DEBUG_NEW_WINDOW__" : false,
-    "__BASENAME__" : false,
-    "React": true,
-    "ReactDOM": true
   },
   "rules": {
     "semi" : [2, "always"],
-    "react-in-jsx-scope": 0
+    "no-undef": 2,
+    "quotes": [2, "single"],
+    "eqeqeq": [2, "allow-null"]
   }
 }
