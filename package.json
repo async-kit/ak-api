@@ -26,6 +26,7 @@
   "homepage": "https://github.com/async-kit/ak-api#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "restify": "^4.0.3"
   }
 }
