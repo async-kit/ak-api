@@ -27,5 +27,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "glob": "^6.0.4",
+    "highland": "^2.6.0"
   }
 }
