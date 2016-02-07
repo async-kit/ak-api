@@ -10,7 +10,7 @@ const expect = chai.expect,
   assert = chai.assert,
 
   testServer = restify.createServer({name: 'testServer'}),
-  moduleType = typeof endpointModule;;
+  moduleType = typeof endpointModule;
 
 module.exports = describe('Basic Module Structure and Behavior', () => {
 
