@@ -1,5 +1,5 @@
 'use strict';
 
-describe('this test', () => {
+describe('ak-api', () => {
   require('./tests/structure');
 });

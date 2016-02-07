@@ -1,16 +1,16 @@
 'use strict';
 
-var mocha = require('mocha'),
-  chai = require('chai'),
-  restify = require('restify'),
-  Server = require('restify/lib/server'),
-  endpointModule = require('../../index');
+let mocha = require('mocha'),
+    chai = require('chai'),
+    restify = require('restify'),
+    Server = require('restify/lib/server'),
+    endpointModule = require('../../index');
 
 const expect = chai.expect,
-  assert = chai.assert,
+    assert = chai.assert,
 
-  testServer = restify.createServer({name: 'testServer'}),
-  moduleType = typeof endpointModule;
+    testServer = restify.createServer({name: 'testServer'}),
+    moduleType = typeof endpointModule;
 
 module.exports = describe('Basic Module Structure and Behavior', () => {
 
