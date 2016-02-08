@@ -24,6 +24,16 @@ describe('AK-API', () => {
     it('should throw an error if invoked without arguments', () => {
       expect(entrypoint).to.throw();
     });
+
+    it('should execute without error given valid arguments', () => {
+
+      let config = {
+        handlersDir: './spec/data/definitions/valid'
+      };
+
+      assert.instanceOf(testServer, RestifyServer, 'using instance of Restify Server');
+      expect(() => entrypoint(testServer, config)).to.not.throw();
+    });
   });
 
   // lib folder unit structure and behavior
