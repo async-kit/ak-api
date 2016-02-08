@@ -61,4 +61,12 @@ module.exports = describe('"loadRoutes"', () => {
     });
   });
 
+  it('should not throw an error when definitions provide valid properties', done => {
+    loadRoutes('./spec/data/definitions/valid', testServer, null, (err, data) => {
+      expect(err).to.equal(null);
+      expect(data).to.be.an('object');
+      done();
+    });
+  });
+
 });
