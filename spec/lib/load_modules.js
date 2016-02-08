@@ -29,4 +29,12 @@ module.exports = describe('"loadRoutes"', () => {
     });
   });
 
+  it('should return error when endpoint definition returns the wrong type', done => {
+    loadRoutes('./spec/data/definitions/invalid/return', testServer, null, (err, data) => {
+      expect(err).to.be.an.instanceOf(Error);
+      expect(err.message).to.equal('Endpoint definition\'s return value has a value type of string and must be a(n) object.');
+      done();
+    });
+  });
+
 });
