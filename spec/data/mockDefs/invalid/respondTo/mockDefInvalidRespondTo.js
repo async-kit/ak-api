@@ -2,11 +2,8 @@
 
 module.exports = function(server, options) {
   return {
-    respondTo: 'GET',
+    respondTo: {},
     endpoint: '/api/hello/:name',
-    handledBy: [
-      'handler1',
-      'handler2'
-    ]
+    handledBy: () => {}
   };
 };
