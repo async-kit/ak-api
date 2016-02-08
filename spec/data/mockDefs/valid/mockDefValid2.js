@@ -9,7 +9,7 @@ module.exports = function(server, options) {
     endpoint: '/api/remember/:name',
     handledBy: [
       associateNameFace,
-      storeNameFace
-    ]
+      storeNameFace,
+    ],
   };
 };

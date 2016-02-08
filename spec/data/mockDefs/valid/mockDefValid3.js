@@ -9,7 +9,7 @@ module.exports = function(server, options) {
     endpoint: '/api/correct/:name',
     handledBy: [
       reassociateName,
-      refreshMemory
-    ]
+      refreshMemory,
+    ],
   };
 };

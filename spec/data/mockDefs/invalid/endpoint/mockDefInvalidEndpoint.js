@@ -4,6 +4,6 @@ module.exports = function(server, options) {
   return {
     respondTo: 'GET',
     endpoint: {},
-    handledBy: () => {}
+    handledBy: () => {},
   };
 };

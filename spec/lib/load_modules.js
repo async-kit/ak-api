@@ -58,7 +58,7 @@ module.exports = describe('"loadRoutes"', () => {
     let variant = Math.floor(Math.random() * 2) + 1,
         mockDefDir = [
           './spec/data/mockDefs/invalid/handledBy',
-          variant.toString()
+          variant.toString(),
         ].join('');
 
     loadRoutes(mockDefDir, testServer, null, (err, data) => {

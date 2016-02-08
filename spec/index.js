@@ -28,7 +28,7 @@ describe('AK-API', () => {
     it('should execute without error given valid arguments', () => {
 
       let config = {
-        handlersDir: './spec/data/definitions/valid'
+        handlersDir: './spec/data/definitions/valid',
       };
 
       assert.instanceOf(testServer, RestifyServer, 'using instance of Restify Server');

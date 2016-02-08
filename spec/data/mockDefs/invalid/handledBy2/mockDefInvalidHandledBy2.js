@@ -6,7 +6,7 @@ module.exports = function(server, options) {
     endpoint: '/api/hello/:name',
     handledBy: [
       () => {},
-      'handlerName'
-    ]
+      'handlerName',
+    ],
   };
 };
