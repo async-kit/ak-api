@@ -37,4 +37,28 @@ module.exports = describe('"loadRoutes"', () => {
     });
   });
 
+  it('should return error when def.respondTo is the wrong type', done => {
+    loadRoutes('./spec/data/definitions/invalid/respondTo', testServer, null, (err, data) => {
+      expect(err).to.be.an.instanceOf(Error);
+      expect(err.message).to.equal('Endpoint definition\'s "respondTo" property has a value type of object and must be a(n) string.');
+      done();
+    });
+  });
+
+  it('should return error when def.endpoint is the wrong type', done => {
+    loadRoutes('./spec/data/definitions/invalid/endpoint', testServer, null, (err, data) => {
+      expect(err).to.be.an.instanceOf(Error);
+      expect(err.message).to.equal('Endpoint definition\'s "endpoint" property has a value type of object and must be a(n) string.');
+      done();
+    });
+  });
+
+  it('should return error when def.handledBy is the wrong type', done => {
+    loadRoutes('./spec/data/definitions/invalid/endpoint', testServer, null, (err, data) => {
+      expect(err).to.be.an.instanceOf(Error);
+      expect(err.message).to.equal('Endpoint definition\'s "handledBy" property has a value type of string and must be a(n) function.');
+      done();
+    });
+  });
+
 });
