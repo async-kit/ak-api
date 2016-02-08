@@ -5,11 +5,11 @@ let mocha = require('mocha'),
     restify = require('restify');
 
 const expect = chai.expect,
-    assert = chai.assert,
-    entrypoint = require('../../index'),
-    loadRoutes = require('../../lib/load_modules');
+    assert = chai.assert;
 
-let testServer = restify.createServer();
+let entrypoint = require('../../index'),
+    loadRoutes = require('../../lib/load_modules'),
+    testServer = restify.createServer();
 
 module.exports = describe('"loadRoutes"', () => {
 
@@ -29,7 +29,7 @@ module.exports = describe('"loadRoutes"', () => {
     });
   });
 
-  it('should return error when endpoint definition returns the wrong type', done => {
+  it('should return error when endpoint def returns the wrong type', done => {
     loadRoutes('./spec/data/mockDefs/invalid/return', testServer, null, (err, data) => {
       expect(err).to.be.an.instanceOf(Error);
       expect(err.message).to.equal('Endpoint definition\'s return value has a value type of string and must be a(n) object.');
@@ -54,7 +54,14 @@ module.exports = describe('"loadRoutes"', () => {
   });
 
   it('should return error when def.handledBy is the wrong type', done => {
-    loadRoutes('./spec/data/mockDefs/invalid/endpoint', testServer, null, (err, data) => {
+
+    let variant = Math.floor(Math.random() * 2) + 1,
+        mockDefDir = [
+          './spec/data/mockDefs/invalid/handledBy',
+          variant.toString()
+        ].join('');
+
+    loadRoutes(mockDefDir, testServer, null, (err, data) => {
       expect(err).to.be.an.instanceOf(Error);
       expect(err.message).to.equal('Endpoint definition\'s "handledBy" property has a value type of string and must be a(n) function.');
       done();
