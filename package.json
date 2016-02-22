@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "glob": "^6.0.4",
-    "highland": "^2.6.0"
+    "highland": "^2.6.0",
+    "json-stream-response": "^1.0.2"
   },
   "peerDependencies": {
     "restify": "^4.0.3"

@@ -17,12 +17,34 @@ describe('AK-API', () => {
   // index.js structure and behavior
   describe('entrypoint', () => {
 
-    it('should be a function', () => {
-      expect(moduleType).to.equal('function');
+    it('should be an object', () => {
+      expect(moduleType).to.equal('object');
     });
 
-    it('should throw an error if invoked without arguments', () => {
-      expect(entrypoint).to.throw();
+    describe('validate configureServer method', () => {
+      it('should exist', () => {
+        expect(entrypoint).itself.to.respondTo('configureServer');
+      });
+
+      it('should throw an error if invoked without arguments', () => {
+        expect(entrypoint.configureServer).to.throw();
+      });
+
+    });
+
+    describe('validate streamResponse method', () => {
+      it('should exist', () => {
+        expect(entrypoint).itself.to.respondTo('streamResponse');
+      });
+
+      it('should throw an error if invoked without arguments', () => {
+        expect(entrypoint.streamResponse).to.throw();
+      });
+
+      it('should throw an error if invoked with a non-stream argument', () => {
+        expect(() => {entrypoint.streamResponse(42)}).to.throw();
+      });
+
     });
 
     it('should execute without error given valid arguments', () => {
@@ -32,7 +54,7 @@ describe('AK-API', () => {
       };
 
       assert.instanceOf(testServer, RestifyServer, 'using instance of Restify Server');
-      expect(() => entrypoint(testServer, config)).to.not.throw();
+      expect(() => entrypoint.configureServer(testServer, config)).to.not.throw();
     });
   });
 
