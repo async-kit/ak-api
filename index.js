@@ -18,5 +18,15 @@ module.exports = {
   },
   'streamResponse': (res) => {
     return jsr(res);
+  },
+  'jsonResponder': (res, next) => {
+    return (err, result) => {
+      if (err) {
+        next(err);
+      }
+      else {
+        res.send(200, result);
+      }
+    }
   }
 };
