@@ -16,7 +16,8 @@ module.exports = {
     conf.handlersDir = conf.handlersDir || './endpoints';
     loadRoutes(conf.handlersDir, restifyServer, params, cb);
   },
-  'streamResponse': (res) => {
+  'streamResponse': (res, next) => {
+    res.on('finish', next);
     return jsr(res);
   },
   'jsonResponder': (res, next) => {
