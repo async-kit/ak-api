@@ -1,10 +1,10 @@
-'use strict';
+const loadRoutes = require('./lib/load_modules');
+const jsr = require('json-stream-response');
 
-let loadRoutes = require('./lib/load_modules'),
-    _ = require('highland'),
-    jsr = require('json-stream-response');
+const httpSuccess = 200;
 
 module.exports = {
+  // eslint-disable-next-line max-params
   'configureServer': (restifyServer, conf, params, cb) => {
 
     // throw descriptive error when config not provided
@@ -24,10 +24,11 @@ module.exports = {
     return (err, result) => {
       if (err) {
         next(err);
+        return;
       }
       else {
-        res.send(200, result);
+        res.send(httpSuccess, result);
       }
-    }
-  }
+    };
+  },
 };

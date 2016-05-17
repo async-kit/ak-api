@@ -1,9 +1,7 @@
-'use strict';
+const reassociateName = () => {};
+const refreshMemory = () => {};
 
-function reassociateName() {}
-function refreshMemory() {}
-
-module.exports = function(server, options) {
+module.exports = function () {
   return {
     respondTo: 'PUT',
     endpoint: '/api/correct/:name',

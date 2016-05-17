@@ -1,10 +1,11 @@
 {
   "name": "ak-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "async-kit API server toolkit",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec"
+    "test": "mocha spec",
+    "lint": "./node_modules/.bin/eslint . ./"
   },
   "repository": {
     "type": "git",
@@ -25,13 +26,23 @@
   },
   "homepage": "https://github.com/async-kit/ak-api#readme",
   "devDependencies": {
+    "babel-eslint": "^6.0.4",
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "eslint": "^2.10.2",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-plugin-filenames": "^0.2.0",
+    "mocha": "^2.4.5",
+    "sqlite3": "^3.1.4"
   },
   "dependencies": {
+    "bcrypt": "^0.8.6",
+    "bunyan": "^1.8.1",
     "glob": "^6.0.4",
     "highland": "^2.6.0",
-    "json-stream-response": "^1.0.2"
+    "json-stream-response": "^1.0.2",
+    "jsonwebtoken": "^6.2.0",
+    "lodash": "^4.12.0",
+    "oauth2orize": "^1.2.2"
   },
   "peerDependencies": {
     "restify": "^4.0.3"

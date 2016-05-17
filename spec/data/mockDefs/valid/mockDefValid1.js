@@ -1,8 +1,6 @@
-'use strict';
+const sayHello = () => {};
 
-function sayHello() {}
-
-module.exports = function(server, options) {
+module.exports = function () {
   return {
     respondTo: 'GET',
     endpoint: '/api/hello/:name',

@@ -1,4 +1,5 @@
 {
+  "extends": "defaults/configurations/walmart/es6-node",
   "env"     : {
     "node" : true,
     "es6": true,
@@ -9,10 +10,15 @@
   "rules": {
     "semi" : [2, "always"],
     "no-undef": 2,
+    "no-unused-vars": 2,
     "quotes": [2, "single"],
     "eqeqeq": [2, "allow-null"],
     "indent": [2, 2, {"SwitchCase": 1, "VariableDeclarator": 2}],
     "no-trailing-spaces": 2,
-    "comma-dangle": [2, "always-multiline"]
+    "comma-dangle": [2, "always-multiline"],
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
+    "no-confusing-arrow": 2,
+    "no-constant-condition": 2,
+    "filenames/filenames": [2, "^[A-Za-z0-9_\\.]+$"]
   }
 }

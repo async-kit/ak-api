@@ -1,5 +1,3 @@
-'use strict';
-
-module.exports = function(server, options) {
+module.exports = function () {
   return ['not a valid endpoint definition'];
 };

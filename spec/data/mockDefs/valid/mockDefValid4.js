@@ -1,8 +1,6 @@
-'use strict';
+const forgetNameFace = () => {};
 
-function forgetNameFace() {}
-
-module.exports = function(server, options) {
+module.exports = function () {
   return {
     respondTo: 'DEL',
     endpoint: '/api/forget/:name',

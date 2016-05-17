@@ -1,16 +1,14 @@
-'use strict';
+/*eslint max-nested-callbacks: ["error", 5]*/
+const chai = require('chai');
+const restify = require('restify');
+const RestifyServer = require('restify/lib/server');
+const entrypoint = require('../index');
 
-let mocha = require('mocha'),
-    chai = require('chai'),
-    restify = require('restify'),
-    RestifyServer = require('restify/lib/server'),
-    entrypoint = require('../index');
+const expect = chai.expect;
+const assert = chai.assert;
 
-const expect = chai.expect,
-    assert = chai.assert,
-
-    testServer = restify.createServer({name: 'testServer'}),
-    moduleType = typeof entrypoint;
+const testServer = restify.createServer({name: 'testServer'});
+const moduleType = typeof entrypoint;
 
 describe('AK-API', () => {
 
@@ -42,14 +40,15 @@ describe('AK-API', () => {
       });
 
       it('should throw an error if invoked with a non-stream argument', () => {
-        expect(() => {entrypoint.streamResponse(42)}).to.throw();
+        const expectedResponse = 42;
+        expect(() => {entrypoint.streamResponse(expectedResponse);}).to.throw();
       });
 
     });
 
     it('should execute without error given valid arguments', () => {
 
-      let config = {
+      const config = {
         handlersDir: './spec/data/definitions/valid',
       };
 
@@ -60,6 +59,10 @@ describe('AK-API', () => {
 
   // lib folder unit structure and behavior
   describe('submodule', () => {
-    require('./lib/load_modules');
+    // eslint-disable-next-line global-require
+    require('./lib/loadModules');
+    // eslint-disable-next-line global-require
+    require('./lib/hash_proxy_bcrypt');
   });
+
 });

@@ -1,9 +1,7 @@
-'use strict';
+const associateNameFace = () => {};
+const storeNameFace = () => {};
 
-function associateNameFace() {}
-function storeNameFace() {}
-
-module.exports = function(server, options) {
+module.exports = function () {
   return {
     respondTo: 'POST',
     endpoint: '/api/remember/:name',
