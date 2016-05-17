@@ -34,3 +34,10 @@ node_modules
 
 # Just for my editor - TF
 .editorconfig
+
+# Developer play area
+play/
+
+# Intellij artifacts
+.idea/
+*.iml
