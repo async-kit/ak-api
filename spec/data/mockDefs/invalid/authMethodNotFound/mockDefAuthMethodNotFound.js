@@ -3,6 +3,6 @@ module.exports = function () {
     respondTo: 'GET',
     authMethod: 'Foo',
     endpoint: '/api/hello/:name',
-    handledBy: 'handler',
+    handledBy: () => {},
   };
 };
